@@ -55,55 +55,6 @@ The script includes functions to display original and enhanced images side-by-si
 
 - **Entropy Calculation**: The script calculates entropy for evaluating image enhancement quality.
 
-## Example
 
-Here's a basic example of how to use the script to enhance an image and visualize the results:
-
-```python
-# Replace 'path_to_image.jpg' with the actual path to your image
-enhance_image('/content/drive/MyDrive/i/lena_face.jpg')
-
-# Load the image
-image_path = '/content/drive/MyDrive/i/lena_face.jpg'
-original_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-
-# Process images with different methods
-images = {
-    'Original': original_image,
-    'Dark Detail Enhancement': adjust_gamma(original_image, gamma=0.5),
-    'Defogging': defog(original_image),
-    'Homomorphic Filtering': homomorphic_filter(original_image),
-    'Histogram Equalization': histogram_equalization(original_image),
-    'Proposed Algorithm': proposed_algorithm(original_image)
-}
-
-# Plotting processed images
-fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(15, 10))
-axes = axes.ravel()
-
-for ax, (title, img) in zip(axes, images.items()):
-    ax.imshow(img, cmap='gray')
-    ax.set_title(title)
-    ax.axis('off')
-
-plt.tight_layout()
-plt.show()
-
-# Histogram Comparison
-fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(15, 10))
-axes = axes.ravel()
-
-for ax, (title, img) in zip(axes, images.items()):
-    img = np.uint8(img)
-    hist = cv2.calcHist([img], [0], None, [256], [0, 256])
-    ax.plot(hist)
-    ax.set_title(f'{title}')
-    ax.set_xlim([0, 256])
-
-plt.tight_layout()
-plt.show()
-```
-
----
 
 This `README.md` provides an overview of the project, instructions for installation and usage, descriptions of the functions, visualization techniques, evaluation metrics, and a complete example to demonstrate the use of the script.
