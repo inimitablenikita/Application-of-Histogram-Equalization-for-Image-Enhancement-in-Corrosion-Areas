@@ -41,8 +41,7 @@ Load and process an image using various enhancement methods. The script will dis
 - `hsi2rgb(hsi_image)`: Converts an HSI image back to RGB color space.
 - `enhance_image(image_path)`: Enhances an image by applying histogram equalization, padding, wavelet transform, and nonlinear filtering.
 - `adjust_gamma(image, gamma=1.0)`: Adjusts the gamma of an image.
-- `defog_image(image, window_size=15, lambda_=0.2)`: Dehazing algorithm to enhance visibility in foggy images.
-- `defog(image)`: Wrapper function for defog_image.
+- `defog_image(image)`: Dehazing algorithm to enhance visibility in foggy images.
 - `histogram_equalization(image)`: Performs histogram equalization on an image.
 - `proposed_algorithm(image)`: Applies a sequence of enhancement techniques to an image.
 - `load_images_from_zip(zip_path, inner_folder, num_images=3)`: Loads a limited number of images from a specified folder within a zip file.
